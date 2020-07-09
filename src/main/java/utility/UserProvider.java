@@ -55,7 +55,7 @@ public class UserProvider {
         return user.getFirstName()+"@"+user.getLastName()+".com";
     }
 
-    private static String getName() {
+    public static String getName() {
         StringBuilder name = new StringBuilder();
         name.append(ALPHA_UPPER.charAt(getRandomNumber(ALPHA_UPPER.length())));
         for (int i = 0; i< 6; i++)

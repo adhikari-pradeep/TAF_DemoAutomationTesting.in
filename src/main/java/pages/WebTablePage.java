@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class WebTablePage extends BasePage {
 
+    static final String PAGE_TITLE = "Web Table";
     private static WebTablePage webTablePage;
     private final WebDriver driver;
 
@@ -27,9 +28,9 @@ public class WebTablePage extends BasePage {
     }
 
     @Override
-    void loadPage() {
+    public void loadPage() {
         driver.navigate().to(PageUrls.WEB_TABLE_PAGE_URL);
-        driver.manage().window().maximize();
+        maximizeBrowserWindow();
     }
 
     @Override

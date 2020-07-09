@@ -11,6 +11,6 @@ public class UnsupportedBrowserException extends Exception {
 
     @Override
     public String toString() {
-        return "UnsupportedBrowserException : "+this.getMessage()+" browser is not supported";
+        return String.format("Unsupported Browser : %s",this.getMessage());
     }
 }

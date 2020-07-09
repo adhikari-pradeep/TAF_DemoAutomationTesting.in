@@ -27,10 +27,10 @@ public class TestRegisterPage {
     @Test
     public void testLoadRegisterPage() {
         registerPage.loadPage();
-        Assert.assertTrue(registerPage.isPageLoaded());
+        Assert.assertTrue(registerPage.isRegisterPageLoaded());
     }
 
-    @Test
+    @Test(dependsOnMethods = "testLoadRegisterPage")
     public void testRegistrationFunction() throws IOException {
         User user = UserProvider.getUser();
         registerPage.enterFirstName(user.getFirstName());

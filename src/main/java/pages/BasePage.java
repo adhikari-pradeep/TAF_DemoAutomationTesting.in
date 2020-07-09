@@ -3,6 +3,7 @@ package pages;
 import constants.PageUrls;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,12 +19,20 @@ public abstract class BasePage {
         wait = new WebDriverWait(driver, TIMEOUT_IN_SECONDS);
     }
 
-    abstract void loadPage();
+    public abstract void loadPage();
 
-    abstract void deleteInstance();
+    public abstract void deleteInstance();
 
-    public void refreshPage() {
+    protected void refreshPage() {
         driver.navigate().refresh();
+    }
+
+    public void refreshLocators(BasePage page) {
+        PageFactory.initElements(driver, page);
+    }
+
+    public void maximizeBrowserWindow() {
+        driver.manage().window().maximize();
     }
 
     public boolean isPageLoaded(WebElement... elements) {
@@ -49,6 +58,10 @@ public abstract class BasePage {
 
     void waitUntilPageWithUrlLoads(String url) {
         wait.until(ExpectedConditions.urlToBe(url));
+    }
+
+    void waitUntilPageWithTitleLoads(String title) {
+        wait.until(ExpectedConditions.titleIs(title));
     }
 
     void waitUntilElementVisible(WebElement element) {

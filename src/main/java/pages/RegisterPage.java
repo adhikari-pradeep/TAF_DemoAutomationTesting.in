@@ -60,7 +60,7 @@ public class RegisterPage extends BasePage {
     @Override
     public void loadPage() {
         driver.navigate().to(PageUrls.REGISTER_PAGE_URL);
-        driver.manage().window().maximize();
+        maximizeBrowserWindow();
         initializeSelects(driver);
     }
 
@@ -69,7 +69,7 @@ public class RegisterPage extends BasePage {
         registerPage = null;
     }
 
-    boolean isRegisterPageLoaded() {
+    public boolean isRegisterPageLoaded() {
         return isPageLoaded(inputFirstName, inputLastName,
                 inputEmail, inputPhone,
                 radioGenderM, radioGenderF,
@@ -135,6 +135,7 @@ public class RegisterPage extends BasePage {
     public WebTablePage register() {
         btnSubmit.click();
         waitUntilPageWithUrlLoads(PageUrls.WEB_TABLE_PAGE_URL);
+        waitUntilPageWithTitleLoads(WebTablePage.PAGE_TITLE);
         return WebTablePage.getInstance(driver);
     }
 }

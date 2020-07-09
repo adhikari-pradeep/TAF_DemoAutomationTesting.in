@@ -37,7 +37,7 @@ public class IndexPage extends BasePage {
     @Override
     public void loadPage() {
         driver.navigate().to(PageUrls.INDEX_PAGE_URL);
-        driver.manage().window().maximize();
+        maximizeBrowserWindow();
     }
 
     public RegisterPage skipSignIn() {
