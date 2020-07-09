@@ -1,0 +1,6 @@
+/src/main/resources/driver/windows/chromedriver.exe
+/src/main/resources/driver/windows/geckodriver.exe
+/src/main/resources/driver/windows/msedgedriver.exe
+/.idea/
+/Test DemoAutomationTesting.iml
+/target/
