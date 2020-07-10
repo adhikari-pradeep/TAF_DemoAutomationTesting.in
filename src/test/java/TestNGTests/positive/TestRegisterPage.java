@@ -50,8 +50,10 @@ public class TestRegisterPage {
 
     @AfterClass
     public void cleanup() {
-        registerPage.deleteInstance();
-        webTablePage.deleteInstance();
+        if (registerPage != null)
+            registerPage.deleteInstance();
+        if (webTablePage != null)
+            webTablePage.deleteInstance();
         driver.manage().deleteAllCookies();
         driver.close();
     }

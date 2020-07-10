@@ -59,7 +59,8 @@ public class TestAlertPage {
 
     @AfterClass
     public void cleanup() {
-        alertPage.deleteInstance();
+        if (alertPage != null)
+            alertPage.deleteInstance();
         driver.manage().deleteAllCookies();
         driver.close();
     }

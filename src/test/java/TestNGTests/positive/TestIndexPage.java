@@ -36,8 +36,10 @@ public class TestIndexPage {
 
     @AfterClass
     public void cleanup() {
-        indexPage.deleteInstance();
-        registerPage.deleteInstance();
+        if (indexPage != null)
+            indexPage.deleteInstance();
+        if (registerPage != null)
+            registerPage.deleteInstance();
         driver.manage().deleteAllCookies();
         driver.close();
     }

@@ -35,6 +35,14 @@ public abstract class BasePage {
         driver.manage().window().maximize();
     }
 
+    public String getWindowTitle() {
+        return driver.getTitle();
+    }
+
+    public String getCurrentURL() {
+        return driver.getCurrentUrl();
+    }
+
     public boolean isPageLoaded(WebElement... elements) {
         boolean loaded = true;
         for (WebElement element : elements) {
