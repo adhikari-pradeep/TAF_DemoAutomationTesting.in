@@ -106,6 +106,7 @@ public class RegisterPage extends BasePage {
     }
 
     public void selectCountry(String country) {
+        scrollToElement(selectCountry);
         country = country.substring(0,1).toUpperCase()+country.substring(1).toLowerCase();
         selectCountry.selectByValue(country);
     }

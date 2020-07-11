@@ -7,8 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedHashSet;
 import java.util.List;
 
 public class WindowPage extends BasePage {
@@ -24,11 +22,11 @@ public class WindowPage extends BasePage {
     private WebElement btnNewTabbedWindow;
     @FindBy(xpath = ".//a[@href='#Seperate']")
     private WebElement tabNewSeperateWindow;
-    @FindBy(id = ".//button[@onclick='newwindow()']")
+    @FindBy(xpath = ".//button[@onclick='newwindow()']")
     private WebElement btnNewSeperateWindow;
     @FindBy(xpath = ".//a[@href='#Multiple']")
     private WebElement tabNewSeperateMultipleWindow;
-    @FindBy(id = ".//button[@onclick='multiwindow()']")
+    @FindBy(xpath = ".//button[@onclick='multiwindow()']")
     private WebElement btnNewSeperateMultipleWindow;
 
 
@@ -66,6 +64,22 @@ public class WindowPage extends BasePage {
         refreshWindowList();
     }
 
+    public void getNewSeperateWindow() {
+        mainWindow = driver.getWindowHandle();
+        tabNewSeperateWindow.click();
+        refreshLocators(this);
+        btnNewSeperateWindow.click();
+        refreshWindowList();
+    }
+
+    public void getNewMultipleSeperateWindow() {
+        mainWindow = driver.getWindowHandle();
+        tabNewSeperateMultipleWindow.click();
+        refreshLocators(this);
+        btnNewSeperateMultipleWindow.click();
+        refreshWindowList();
+    }
+
     public int getWindowCount() {
         return windows.size();
     }
@@ -87,5 +101,11 @@ public class WindowPage extends BasePage {
 
     public void gotoMainWindow() {
         driver.switchTo().window(mainWindow);
+    }
+
+    public WindowPage refreshPage(WebDriver driver) {
+        super.refreshPage();
+        deleteInstance();
+        return getInstance(driver);
     }
 }

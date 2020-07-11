@@ -1,10 +1,12 @@
 package pages;
 
 import constants.PageUrls;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
@@ -62,6 +64,14 @@ public abstract class BasePage {
             waitUntilElementVisible(element);
             return element.isDisplayed();
         }
+    }
+
+    public void scrollToElement(WebElement element) {
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public void scrollToElement(Select element) {
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
     void waitUntilPageWithUrlLoads(String url) {

@@ -29,7 +29,7 @@ public class TestWindowPage {
         Assert.assertTrue(windowPage.isWindowPageLoaded());
     }
 
-    @Test(dependsOnMethods = "testLoadWindowPage")
+    @Test(dependsOnMethods = "testLoadWindowPage", priority = 1)
     public void testNewTabbedWindow() {
         windowPage.getNewTabbedWindow();
         Assert.assertEquals(windowPage.getWindowCount(), 2);
@@ -42,6 +42,42 @@ public class TestWindowPage {
         windowPage.refreshWindowList();
         Assert.assertEquals(windowPage.getWindowCount(), 1);
         windowPage.gotoMainWindow();
+        windowPage.refreshPage(driver);
+    }
+
+    @Test(dependsOnMethods = "testLoadWindowPage", priority = 2)
+    public void testNewSeperateWindow() {
+        windowPage.getNewSeperateWindow();
+        Assert.assertEquals(windowPage.getWindowCount(), 2);
+        windowPage.switchToWindow(1);
+        Assert.assertEquals(windowPage.getWindowTitle(), "Sakinalium | Home");
+        Assert.assertEquals(windowPage.getCurrentURL(), "http://www.sakinalium.in/");
+        windowPage.gotoMainWindow();
+        Assert.assertEquals(windowPage.getCurrentURL(), PageUrls.WINDOW_PAGE_URL);
+        windowPage.closeChildWindows();
+        windowPage.refreshWindowList();
+        Assert.assertEquals(windowPage.getWindowCount(), 1);
+        windowPage.gotoMainWindow();
+        windowPage.refreshPage(driver);
+    }
+
+    @Test(dependsOnMethods = "testLoadWindowPage", priority = 3)
+    public void testNewMultipleSeperateWindow() {
+        windowPage.getNewMultipleSeperateWindow();
+        Assert.assertEquals(windowPage.getWindowCount(), 3);
+        windowPage.switchToWindow(1);
+        Assert.assertEquals(windowPage.getWindowTitle(), "Sakinalium | Home");
+        Assert.assertEquals(windowPage.getCurrentURL(), "http://www.sakinalium.in/");
+        windowPage.switchToWindow(2);
+        Assert.assertEquals(windowPage.getWindowTitle(), "Index");
+        Assert.assertEquals(windowPage.getCurrentURL(), PageUrls.INDEX_PAGE_URL);
+        windowPage.gotoMainWindow();
+        Assert.assertEquals(windowPage.getCurrentURL(), PageUrls.WINDOW_PAGE_URL);
+        windowPage.closeChildWindows();
+        windowPage.refreshWindowList();
+        Assert.assertEquals(windowPage.getWindowCount(), 1);
+        windowPage.gotoMainWindow();
+        windowPage.refreshPage(driver);
     }
 
     @AfterClass
