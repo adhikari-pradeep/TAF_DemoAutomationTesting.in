@@ -43,7 +43,7 @@ public class UserProvider {
         else return "F";
     }
 
-    private static String getPhone() {
+    public static String getPhone() {
         StringBuilder phone = new StringBuilder();
         for (int i=0; i<10; i++) {
             phone.append(NUM.charAt(getRandomNumber(NUM.length())));

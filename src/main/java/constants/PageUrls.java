@@ -7,4 +7,5 @@ public final class PageUrls {
     public static final String WEB_TABLE_PAGE_URL = "http://demo.automationtesting.in/WebTable.html";
     public static final String ALERT_PAGE_URL = "http://demo.automationtesting.in/Alerts.html";
     public static final String WINDOW_PAGE_URL = "http://demo.automationtesting.in/Windows.html";
+    public static final String FRAME_PAGE_URL = "http://demo.automationtesting.in/Frames.html";
 }

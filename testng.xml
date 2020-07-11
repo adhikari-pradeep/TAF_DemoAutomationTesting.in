@@ -7,6 +7,7 @@
             <class name="TestNGTests.positive.TestRegisterPage"/>
             <class name="TestNGTests.positive.TestAlertPage"/>
             <class name="TestNGTests.positive.TestWindowPage"/>
+            <class name="TestNGTests.positive.TestFramePage"/>
         </classes>
     </test>
 </suite>
