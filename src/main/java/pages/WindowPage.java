@@ -1,6 +1,6 @@
 package pages;
 
-import constants.PageUrls;
+import constants.URLConstants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,7 +44,7 @@ public class WindowPage extends BasePage {
 
     @Override
     public void loadPage() {
-        driver.navigate().to(PageUrls.WINDOW_PAGE_URL);
+        driver.navigate().to(URLConstants.WINDOW_PAGE_URL);
         maximizeBrowserWindow();
     }
 

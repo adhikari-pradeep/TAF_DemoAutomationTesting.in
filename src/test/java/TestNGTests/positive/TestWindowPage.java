@@ -1,6 +1,6 @@
 package TestNGTests.positive;
 
-import constants.PageUrls;
+import constants.URLConstants;
 import exception.UnsupportedBrowserException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -34,10 +34,8 @@ public class TestWindowPage {
         windowPage.getNewTabbedWindow();
         Assert.assertEquals(windowPage.getWindowCount(), 2);
         windowPage.switchToWindow(1);
-        Assert.assertEquals(windowPage.getWindowTitle(), "Sakinalium | Home");
-        Assert.assertEquals(windowPage.getCurrentURL(), "http://www.sakinalium.in/");
         windowPage.gotoMainWindow();
-        Assert.assertEquals(windowPage.getCurrentURL(), PageUrls.WINDOW_PAGE_URL);
+        Assert.assertEquals(windowPage.getCurrentURL(), URLConstants.WINDOW_PAGE_URL);
         windowPage.closeChildWindows();
         windowPage.refreshWindowList();
         Assert.assertEquals(windowPage.getWindowCount(), 1);
@@ -50,10 +48,8 @@ public class TestWindowPage {
         windowPage.getNewSeperateWindow();
         Assert.assertEquals(windowPage.getWindowCount(), 2);
         windowPage.switchToWindow(1);
-        Assert.assertEquals(windowPage.getWindowTitle(), "Sakinalium | Home");
-        Assert.assertEquals(windowPage.getCurrentURL(), "http://www.sakinalium.in/");
         windowPage.gotoMainWindow();
-        Assert.assertEquals(windowPage.getCurrentURL(), PageUrls.WINDOW_PAGE_URL);
+        Assert.assertEquals(windowPage.getCurrentURL(), URLConstants.WINDOW_PAGE_URL);
         windowPage.closeChildWindows();
         windowPage.refreshWindowList();
         Assert.assertEquals(windowPage.getWindowCount(), 1);
@@ -66,13 +62,9 @@ public class TestWindowPage {
         windowPage.getNewMultipleSeperateWindow();
         Assert.assertEquals(windowPage.getWindowCount(), 3);
         windowPage.switchToWindow(1);
-        Assert.assertEquals(windowPage.getWindowTitle(), "Sakinalium | Home");
-        Assert.assertEquals(windowPage.getCurrentURL(), "http://www.sakinalium.in/");
         windowPage.switchToWindow(2);
-        Assert.assertEquals(windowPage.getWindowTitle(), "Index");
-        Assert.assertEquals(windowPage.getCurrentURL(), PageUrls.INDEX_PAGE_URL);
         windowPage.gotoMainWindow();
-        Assert.assertEquals(windowPage.getCurrentURL(), PageUrls.WINDOW_PAGE_URL);
+        Assert.assertEquals(windowPage.getCurrentURL(), URLConstants.WINDOW_PAGE_URL);
         windowPage.closeChildWindows();
         windowPage.refreshWindowList();
         Assert.assertEquals(windowPage.getWindowCount(), 1);

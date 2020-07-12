@@ -1,6 +1,6 @@
 package pages;
 
-import constants.PageUrls;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -84,6 +84,14 @@ public abstract class BasePage {
 
     void waitUntilElementVisible(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    void waitUntilAllElementVisible(String elementsXpath) {
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(elementsXpath)));
+    }
+
+    void waitUntilElementNotVisible(WebElement element) {
+        wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
     void waitUntilElementClickable(WebElement element) {

@@ -4,13 +4,20 @@ import model.User;
 
 import java.util.Random;
 
-public class UserProvider {
+public class DataProvider {
 
     private static final String ALPHA_LOWER = "abcdefghijklmnopqrstuvwxyz";
     private static final String ALPHA_UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String NUM = "1234567890";
 
-    public static User getUser() {
+    public static String getText(int length) {
+        StringBuilder text = new StringBuilder();
+        for (int i=0; i<length; i++)
+            text.append(ALPHA_LOWER.charAt(getRandomNumber(ALPHA_LOWER.length())));
+        return text.toString();
+    }
+
+    public static User getUserData() {
         User user = new User();
         user.setFirstName(getName());
         user.setLastName(getName());

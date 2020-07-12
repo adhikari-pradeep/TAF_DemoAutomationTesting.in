@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import constants.PageUrls;
+import constants.URLConstants;
 
 public class IndexPage extends BasePage {
 
@@ -36,7 +36,7 @@ public class IndexPage extends BasePage {
 
     @Override
     public void loadPage() {
-        driver.navigate().to(PageUrls.INDEX_PAGE_URL);
+        driver.navigate().to(URLConstants.INDEX_PAGE_URL);
         maximizeBrowserWindow();
     }
 

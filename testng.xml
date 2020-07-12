@@ -8,6 +8,8 @@
             <class name="TestNGTests.positive.TestAlertPage"/>
             <class name="TestNGTests.positive.TestWindowPage"/>
             <class name="TestNGTests.positive.TestFramePage"/>
+            <class name="TestNGTests.positive.TestAccordionPage"/>
+            <class name="TestNGTests.positive.TestAutoCompletePage"/>
         </classes>
     </test>
 </suite>

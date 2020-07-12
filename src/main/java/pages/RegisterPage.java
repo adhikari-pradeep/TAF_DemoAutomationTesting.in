@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import constants.PageUrls;
+import constants.URLConstants;
 import org.openqa.selenium.support.ui.Select;
 
 public class RegisterPage extends BasePage {
@@ -59,7 +59,7 @@ public class RegisterPage extends BasePage {
 
     @Override
     public void loadPage() {
-        driver.navigate().to(PageUrls.REGISTER_PAGE_URL);
+        driver.navigate().to(URLConstants.REGISTER_PAGE_URL);
         maximizeBrowserWindow();
         initializeSelects(driver);
     }
@@ -135,7 +135,7 @@ public class RegisterPage extends BasePage {
 
     public WebTablePage register() {
         btnSubmit.click();
-        waitUntilPageWithUrlLoads(PageUrls.WEB_TABLE_PAGE_URL);
+        waitUntilPageWithUrlLoads(URLConstants.WEB_TABLE_PAGE_URL);
         waitUntilPageWithTitleLoads(WebTablePage.PAGE_TITLE);
         return WebTablePage.getInstance(driver);
     }

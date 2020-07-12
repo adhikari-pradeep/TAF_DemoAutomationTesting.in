@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.AlertPage;
 import utility.BrowserFactory;
-import utility.UserProvider;
+import utility.DataProvider;
 
 import java.io.IOException;
 
@@ -48,7 +48,7 @@ public class TestAlertPage {
 
     @Test(dependsOnMethods = "testLoadAlertPage")
     public void testAlertWithTextBox() {
-        String name = UserProvider.getName();
+        String name = DataProvider.getName();
         Assert.assertEquals(alertPage.acceptAlertWithTextBox(name),
                 "Hello "+name+" How are you today");
         Assert.assertFalse(alertPage.cancelAlertWithTextBox(name));

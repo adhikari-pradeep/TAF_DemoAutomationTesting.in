@@ -8,7 +8,7 @@ import org.testng.annotations.*;
 import pages.RegisterPage;
 import pages.WebTablePage;
 import utility.BrowserFactory;
-import utility.UserProvider;
+import utility.DataProvider;
 
 import java.io.IOException;
 
@@ -32,7 +32,7 @@ public class TestRegisterPage {
 
     @Test(dependsOnMethods = "testLoadRegisterPage")
     public void testRegistrationFunction() throws IOException {
-        User user = UserProvider.getUser();
+        User user = DataProvider.getUserData();
         registerPage.enterFirstName(user.getFirstName());
         registerPage.enterLastName(user.getLastName());
         registerPage.enterEmail(user.getEmail());

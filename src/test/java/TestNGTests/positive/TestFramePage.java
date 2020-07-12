@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.FramePage;
 import utility.BrowserFactory;
-import utility.UserProvider;
+import utility.DataProvider;
 
 import java.io.IOException;
 
@@ -31,8 +31,8 @@ public class TestFramePage {
 
     @Test(dependsOnMethods = "testLoadFramePage", priority = 1)
     public void testSingleFrame() {
-        String text = UserProvider.getName();
-        String number = UserProvider.getPhone();
+        String text = DataProvider.getName();
+        String number = DataProvider.getPhone();
         framePage.switchToSingleFrame();
         framePage.enterTextToInput(text);
         Assert.assertEquals(framePage.getInputBoxText(), text);
@@ -43,8 +43,8 @@ public class TestFramePage {
 
     @Test(dependsOnMethods = "testLoadFramePage", priority = 2)
     public void testMultipleNestedFrame() {
-        String text = UserProvider.getName();
-        String number = UserProvider.getPhone();
+        String text = DataProvider.getName();
+        String number = DataProvider.getPhone();
         framePage.switchToNestedFrame();
         framePage.enterTextToInput(text);
         Assert.assertEquals(framePage.getInputBoxText(), text);

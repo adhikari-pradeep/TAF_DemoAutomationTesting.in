@@ -1,6 +1,6 @@
 package pages;
 
-import constants.PageUrls;
+import constants.URLConstants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -42,7 +42,7 @@ public class AlertPage extends BasePage {
 
     @Override
     public void loadPage() {
-        driver.navigate().to(PageUrls.ALERT_PAGE_URL);
+        driver.navigate().to(URLConstants.ALERT_PAGE_URL);
         maximizeBrowserWindow();
     }
 
