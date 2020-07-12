@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.AccordionPage;
+import pages.widgets.AccordionPage;
 import utility.BrowserFactory;
 
 import java.io.IOException;

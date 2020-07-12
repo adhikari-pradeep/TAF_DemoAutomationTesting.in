@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.AutoCompletePage;
+import pages.widgets.AutoCompletePage;
 import utility.BrowserFactory;
 import utility.DataProvider;
 

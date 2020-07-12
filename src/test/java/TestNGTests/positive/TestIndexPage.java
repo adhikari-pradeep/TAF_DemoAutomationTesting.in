@@ -4,8 +4,8 @@ import exception.UnsupportedBrowserException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import pages.IndexPage;
-import pages.RegisterPage;
+import pages.index.IndexPage;
+import pages.register.RegisterPage;
 import utility.BrowserFactory;
 
 import java.io.IOException;

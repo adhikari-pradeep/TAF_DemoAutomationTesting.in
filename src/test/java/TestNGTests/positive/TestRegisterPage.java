@@ -5,8 +5,8 @@ import model.User;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import pages.RegisterPage;
-import pages.WebTablePage;
+import pages.register.RegisterPage;
+import pages.webTable.WebTablePage;
 import utility.BrowserFactory;
 import utility.DataProvider;
 

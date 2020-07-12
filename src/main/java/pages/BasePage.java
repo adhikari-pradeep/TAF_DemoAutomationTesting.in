@@ -16,7 +16,7 @@ public abstract class BasePage {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
-    BasePage(WebDriver driver) {
+    public BasePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, TIMEOUT_IN_SECONDS);
     }
@@ -74,11 +74,11 @@ public abstract class BasePage {
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-    void waitUntilPageWithUrlLoads(String url) {
+    protected void waitUntilPageWithUrlLoads(String url) {
         wait.until(ExpectedConditions.urlToBe(url));
     }
 
-    void waitUntilPageWithTitleLoads(String title) {
+    protected void waitUntilPageWithTitleLoads(String title) {
         wait.until(ExpectedConditions.titleIs(title));
     }
 
@@ -86,11 +86,11 @@ public abstract class BasePage {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    void waitUntilAllElementVisible(String elementsXpath) {
+    protected void waitUntilAllElementVisible(String elementsXpath) {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(elementsXpath)));
     }
 
-    void waitUntilElementNotVisible(WebElement element) {
+    protected void waitUntilElementNotVisible(WebElement element) {
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
 

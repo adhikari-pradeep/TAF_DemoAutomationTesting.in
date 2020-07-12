@@ -1,10 +1,12 @@
-package pages;
+package pages.index;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import constants.URLConstants;
+import pages.BasePage;
+import pages.register.RegisterPage;
 
 public class IndexPage extends BasePage {
 

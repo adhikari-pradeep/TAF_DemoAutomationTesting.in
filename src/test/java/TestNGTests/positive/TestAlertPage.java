@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.AlertPage;
+import pages.switchables.AlertPage;
 import utility.BrowserFactory;
 import utility.DataProvider;
 

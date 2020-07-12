@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.WindowPage;
+import pages.switchables.WindowPage;
 import utility.BrowserFactory;
 
 import java.io.IOException;

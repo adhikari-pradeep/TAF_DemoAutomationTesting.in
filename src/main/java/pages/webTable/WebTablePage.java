@@ -1,14 +1,15 @@
-package pages;
+package pages.webTable;
 
 import constants.URLConstants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pages.BasePage;
 
 public class WebTablePage extends BasePage {
 
-    static final String PAGE_TITLE = "Web Table";
+    public static final String PAGE_TITLE = "Web Table";
     private static WebTablePage webTablePage;
     private final WebDriver driver;
 
